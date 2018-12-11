@@ -43,9 +43,12 @@ namespace ModisAPI.Controllers
 
         // PUT: api/Studenti/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, Studente StudenteModificato)
         {
+            worker.ModificaStudente(StudenteModificato);
         }
+
+
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
@@ -54,3 +57,4 @@ namespace ModisAPI.Controllers
         }
     }
 }
+

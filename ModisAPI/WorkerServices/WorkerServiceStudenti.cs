@@ -21,6 +21,21 @@ namespace ModisAPI.WorkerServices
             db.SaveChanges();
         }
 
+        public void ModificaStudente(Studente studenteModificato)
+        {
+
+            /*var studente = db.Studenti.Find(studenteModificato.Id);
+            studente.Cognome = studenteModificato.Cognome;
+            studente.Nome = studenteModificato.Nome;
+            studente.Indirizzo = studenteModificato.Indirizzo;*/
+
+            db.Entry(studenteModificato).State =
+                Microsoft.EntityFrameworkCore.EntityState.Modified;
+
+           
+            db.SaveChanges();
+        }
+
         public List<Studente> RestituisciListaStudenti()
         {
             return db.Studenti.ToList();
@@ -39,6 +54,11 @@ namespace ModisAPI.WorkerServices
                 throw new NotImplementedException();
             }
 
+            public void ModificaStudente(Studente studenteModifica)
+            {
+                throw new NotImplementedException();
+            }
+
             public List<Studente> RestituisciListaStudenti()
             {
                 throw new NotImplementedException();
@@ -53,6 +73,11 @@ namespace ModisAPI.WorkerServices
         public class WorkerServiceStudenti : IWorkerServiceStudenti
         {
             public void CreaStudente(Studente studente)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void ModificaStudente(Studente studenteModifica)
             {
                 throw new NotImplementedException();
             }
