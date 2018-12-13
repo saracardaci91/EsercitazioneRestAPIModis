@@ -15,5 +15,5 @@ namespace ModisAPI.Models
         public int NumeroMassimoPartecipanti { get; set; }
         public IList<StudenteCorso> StudenteCorsi { get; set; }
 
-    }
+   }
 }
