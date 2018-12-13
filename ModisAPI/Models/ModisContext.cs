@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace ModisAPI.Models
 {
-    public class ModisContext: DbContext 
+    public class ModisContext : DbContext
     {
+        public ModisContext (DbContextOptions<ModisContext> options) :base(options)
+            {
+
+            }
         public DbSet<Studente> Studenti { get; set; }
 
         public DbSet<Corso> Corsi { get; set; }
@@ -32,7 +36,7 @@ namespace ModisAPI.Models
                 .HasForeignKey(bc => bc.CorsoId);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+      /*  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
         {
 
@@ -41,6 +45,6 @@ namespace ModisAPI.Models
 
             optionsBuilder.UseSqlServer(connection);
 
-        }
+        }*/
     }
 }
